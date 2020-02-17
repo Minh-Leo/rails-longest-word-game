@@ -1,0 +1,21 @@
+<div class="container">
+
+<h1>Home#new</h1>
+<p>Find me in app/views/home/new.html.erb</p>
+
+<ul>
+<% @letters.each do |l| %>
+  <li class="box"><%= l %></li>
+<% end %>
+</ul>
+
+
+<form action="/score" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+  <%= hidden_field_tag :start_time, @start_time %>
+  <label for="word">Type in your word: </label>
+  <input type="text" id="word" name="word">
+  <button type="submit">GO!</button>
+</form>
+</div>
